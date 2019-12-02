@@ -11,6 +11,7 @@ ls -al /home/ec2-user/.kaggle/
 
 %%bash
 kaggle datasets download --unzip paultimothymooney/breast-histopathology-images
+
 %%bash
 rm -rf IDC_regular_ps50_idx5
 
@@ -27,9 +28,11 @@ for path, subdirs, files in os.walk('images'):
         else:
             destination_class = '1'
         os.rename(filename,os.path.join('images',destination_class,name))
+
 %%bash
 cd images/0
 ls -l|wc -l
+
 %%bash
 cd images/1
 ls -l|wc -l
